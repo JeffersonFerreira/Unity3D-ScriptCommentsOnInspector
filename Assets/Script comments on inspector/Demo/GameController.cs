@@ -4,9 +4,7 @@
 public class GameController : MonoBehaviour
 {
     /// <summary>
-    /// <code>quack q*-+.^~uack<c>dawd</c> </code>
-    /// <see   cref = " maxDeaths  " />
-    /// <seealso    cref  =  "maxDeaths"/>
+    /// Prefab of the player... haha so obvious
     /// </summary>
     public GameObject playerPrefab;
 

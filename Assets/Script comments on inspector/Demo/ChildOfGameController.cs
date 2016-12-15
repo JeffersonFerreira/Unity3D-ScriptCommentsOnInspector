@@ -13,4 +13,14 @@ public class ChildOfGameController : GameController
     /// Another useless var
     /// </summary>
     public string blabla;
+
+    // Here will work
+    public NeastedClass neastedClass;
+
+    [System.Serializable]
+    public class NeastedClass
+    {
+        // :(
+        public string thisNotWork;
+    }
 }
