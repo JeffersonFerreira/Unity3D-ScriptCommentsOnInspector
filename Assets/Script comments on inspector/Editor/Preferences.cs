@@ -1,10 +1,10 @@
 ﻿using UnityEngine;
-using System.Collections;
+using System.Collections.Generic;
 using UnityEditor;
 
 namespace Quack
 {
-    public static class Preferences
+    public class Preferences : SettingsProvider
     {
         const string xmlKey = "comments: use-xml";
         const string doubleSlashKey = "comments: use-//";
@@ -29,9 +29,10 @@ namespace Quack
         }
 
 
-        [PreferenceItem("Comments")]
-        public static void PreferencesGUI()
+        [SettingsProvider]
+        public override void OnGUI(string searchContext)
         {
+            base.OnGUI(searchContext);
             fieldPrefix = EditorGUILayout.DelayedTextField("Field prefix", fieldPrefix);
             EditorGUILayout.Space();
 
@@ -40,6 +41,16 @@ namespace Quack
             useXml = GUILayout.Toggle(useXml, "XML");
             useDoubleSlash = GUILayout.Toggle(useDoubleSlash, "//");
             EditorGUILayout.EndHorizontal();
+        }
+
+        [SettingsProvider]
+        static SettingsProvider MyNewPrefCode()
+        {
+            return new Preferences("Preferences/Comments");
+        }
+
+        public Preferences(string path, SettingsScope scopes = SettingsScope.User, IEnumerable<string> keywords = null) : base(path, scopes, keywords)
+        {
         }
     }
 }
