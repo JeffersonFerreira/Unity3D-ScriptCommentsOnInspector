@@ -18,15 +18,15 @@ public class GameController : MonoBehaviour
     /// <summary>
     /// Variable with default value
     /// </summary>
-    [SerializeField] string variableWithDefaultValue = "defaultValue";
+    // [SerializeField] string variableWithDefaultValue = "defaultValue";
 
     // quack
-    // audhawwu       
+    // audhawwu
     [SerializeField] string notXml;
 
-    // audhawwu 
+    // audhawwu
 
     // pudim
     // Joaquina
-    [SerializeField] string notXmlWithDefaultValue = "pudim";
+    // [SerializeField] string notXmlWithDefaultValue = "pudim";
 }
